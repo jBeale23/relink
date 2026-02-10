@@ -4,6 +4,15 @@
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    IMPORT FUNCTIONS / MODULES / SUBWORKFLOWS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     SUBWORKFLOW DEFINITION
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
@@ -68,10 +77,6 @@ def getWorkflowVersion() {
 //
 // Dump pipeline parameters to JSON
 //
-
-import java.nio.file.Files
-import java.nio.file.StandardCopyOption
-
 def dumpParametersToJSON(outdir) {
     def timestamp  = new java.util.Date().format('yyyy-MM-dd_HH-mm-ss')
     def filename   = "params_${timestamp}.json"
