@@ -7,7 +7,7 @@
     SUBWORKFLOW DEFINITION
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-include { paramsSummaryLog; } from 'plugin/nf-validation'
+include { paramsSummaryLog; validateParameters; } from 'plugin/nf-validation'
 workflow UTILS_NFCORE_PIPELINE {
 
     take:
