@@ -68,6 +68,10 @@ def getWorkflowVersion() {
 //
 // Dump pipeline parameters to JSON
 //
+
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
+
 def dumpParametersToJSON(outdir) {
     def timestamp  = new java.util.Date().format('yyyy-MM-dd_HH-mm-ss')
     def filename   = "params_${timestamp}.json"
@@ -75,9 +79,12 @@ def dumpParametersToJSON(outdir) {
     def jsonStr    = groovy.json.JsonOutput.toJson(params)
     temp_pf.text   = groovy.json.JsonOutput.prettyPrint(jsonStr)
 
-    nextflow.io.file.FileHelper.moveTo(
+    def target = file("${outdir}/pipeline_info/${filename}")
+
+    Files.move(
         temp_pf.toPath(),
-        nextflow.io.file.FileHelper.toPath("${outdir}/pipeline_info/${filename}")
+        target,
+        StandardCopyOption.REPLACE_EXISTING
     )
 }
 
