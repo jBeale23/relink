@@ -112,7 +112,7 @@ def softwareVersionsToYAML(ch_versions) {
         .unique()
         .map { processVersions(it) }
         .unique()
-        .map { yaml -> yaml.trim() }
+        .map { yaml -> yaml.normalize() }
         .collectFile(name: 'versions.yml', newLine: true, sort: true)
 }
 
