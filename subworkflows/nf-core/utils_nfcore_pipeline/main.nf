@@ -27,7 +27,7 @@ workflow UTILS_NFCORE_PIPELINE {
     schema_filename
 
     main:
-    def valid_config = true
+        valid_config = Channel.value(true)
 
     //
     // Print help message if required
