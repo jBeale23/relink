@@ -1,6 +1,6 @@
 process FORMAT_CORRECTION {
     tag "$meta.id"
-    label 'process_short'
+    label 'process_light'
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
