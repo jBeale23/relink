@@ -8,6 +8,7 @@ include { THERMORAWFILEPARSER           } from '../modules/bigbio/thermorawfilep
 include { XISEARCH as XISEARCH_LINEAR   } from '../modules/local/xisearch/main'
 include { XISEARCH as XISEARCH_CROSSLINK } from '../modules/local/xisearch/main'
 include { MASS_RECALIBRATION            } from '../modules/local/mass_recalibration/main'
+include { FORMAT_CORRECTION } from '../modules/local/intensity_reformat/main'
 include { XIFDR                         } from '../modules/local/xifdr/main'
 include { PMULTIQC                      } from '../modules/bigbio/pmultiqc/main'
 include { paramsSummaryMap              } from 'plugin/nf-validation'
@@ -104,6 +105,14 @@ workflow RELINK {
     } else {
         ch_mgf_for_crosslink = ch_mgf
     }
+    // =========================================================================
+    // STEP 3.5: MGF Format Correction
+    // =========================================================================
+    FORMAT_CORRECTION (
+        ch_mgf_for_crosslink
+    )
+    ch_versions = ch_versions.mix(FORMAT_CORRECTION.out.versions.first())
+    ch_reformatted_mgf_for_crosslink = FORMAT_CORRECTION.out.mgf
 
     // =========================================================================
     // STEP 4: Crosslinking Search
@@ -115,7 +124,7 @@ workflow RELINK {
         // MODULE: Run xiSEARCH crosslinking search
         //
         XISEARCH_CROSSLINK (
-            ch_mgf_for_crosslink,
+            ch_reformatted_mgf_for_crosslink,
             ch_fasta,
             ch_crosslink_config,
             'crosslink'
