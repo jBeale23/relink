@@ -13,10 +13,11 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes d
 1. [File Conversion](#file-conversion) - Convert RAW files to MGF format
 2. [Linear Search](#linear-search) - Run xiSEARCH linear search for mass recalibration
 3. [Mass Recalibration](#mass-recalibration) - Calculate mass errors and recalibrate MGF files
-4. [Crosslinking Search](#crosslinking-search) - Run xiSEARCH crosslinking search
-5. [FDR Correction](#fdr-correction) - FDR correction using xiFDR
-6. [MultiQC](#multiqc) - Aggregate report describing results and QC from the whole pipeline
-7. [Pipeline information](#pipeline-information) - Report metrics generated during the workflow execution
+4. [Format Correction](#format-correction) - Convert scientific notation in MGFs to decimal
+5. [Crosslinking Search](#crosslinking-search) - Run xiSEARCH crosslinking search
+6. [FDR Correction](#fdr-correction) - FDR correction using xiFDR
+7. [MultiQC](#multiqc) - Aggregate report describing results and QC from the whole pipeline
+8. [Pipeline information](#pipeline-information) - Report metrics generated during the workflow execution
 
 ### File Conversion
 
@@ -55,6 +56,18 @@ xiSEARCH linear peptide search is used to identify peptides for mass recalibrati
 </details>
 
 Mass errors are calculated from linear search results and used to recalibrate the MGF peak lists.
+
+### Format Correction
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `format_correction/`
+  - `reformatted_*.mgf`: Reformattted MGF files
+
+</details>
+
+Numbers in scientific notation in the MGF files are converted to decimal.
 
 ### Crosslinking Search
 
