@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wrapped call to mass_recal.py with a call to python to fix failure to call it as an executable
 - Reduced test samples to 1 to reduce runtime for Github actions
 - Updated expected output and XIFDR arguments to reflect faulty argument parsing for file output names
+- Updated output names in docs/output.md to reflect actual pipeline outputs
 
 
 ## v1.0.1dev - [2026-02-10]
