@@ -3,6 +3,14 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.0.1dev - [2026-02-10]
+
+### Fixed
+
+- File path handling for pipeline parameter dump to JSON
+- Added missing import of parameter logging function
+- Added missing import of parameter validation function
+
 ## v1.0.0dev - [date]
 
 Initial development release of bigbio/relink.
@@ -18,11 +26,3 @@ Initial development release of bigbio/relink.
 - nf-core compliant pipeline structure
 - Docker container with xiSEARCH 1.8.11, xiFDR 2.3.10, and Python dependencies
 - GitHub Actions for CI/CD and linting
-
-## v1.0.1dev - [2026-02-10]
-
-### Fixed
-
-- File path handling for pipeline parameter dump to JSON
-- Added missing import of parameter logging function
-- Added missing import of parameter validation function
