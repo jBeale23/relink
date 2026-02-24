@@ -50,7 +50,7 @@ xiSEARCH linear peptide search is used to identify peptides for mass recalibrati
 <summary>Output files</summary>
 
 - `mass_recalibration/`
-  - `*_recalibrated.mgf`: Recalibrated MGF files
+  - `recal_*.mgf`: Recalibrated MGF files
   - `*_mass_error.png`: Mass error distribution plots (if enabled)
 
 </details>
