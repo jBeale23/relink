@@ -106,7 +106,7 @@ workflow RELINK {
         ch_mgf_for_crosslink = ch_mgf
     }
     // =========================================================================
-    // STEP 3.5: MGF Format Correction
+    // STEP 4: MGF Format Correction
     // =========================================================================
     FORMAT_CORRECTION (
         ch_mgf_for_crosslink
@@ -115,7 +115,7 @@ workflow RELINK {
     ch_reformatted_mgf_for_crosslink = FORMAT_CORRECTION.out.mgf
 
     // =========================================================================
-    // STEP 4: Crosslinking Search
+    // STEP 5: Crosslinking Search
     // =========================================================================
 
     if (params.do_crosslinking_search) {
@@ -134,7 +134,7 @@ workflow RELINK {
         ch_crosslink_results = XISEARCH_CROSSLINK.out.results
 
         // =====================================================================
-        // STEP 5: FDR Correction
+        // STEP 6: FDR Correction
         // =====================================================================
 
         if (params.do_fdr) {
@@ -153,7 +153,7 @@ workflow RELINK {
     }
 
     // =========================================================================
-    // STEP 6: Reporting
+    // STEP 7: Reporting
     // =========================================================================
 
     //
