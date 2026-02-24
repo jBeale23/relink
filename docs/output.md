@@ -87,7 +87,7 @@ xiSEARCH crosslinking search identifies crosslinked peptide pairs.
 <summary>Output files</summary>
 
 - `fdr/`
-  - `*_fdr.csv`: FDR-corrected results
+  - `FDR_*.csv`: FDR-corrected results
   - `*_links.csv`: Identified crosslinks
 
 </details>
