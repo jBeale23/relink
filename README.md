@@ -122,4 +122,4 @@ For questions, issues, or feature requests, please open an issue on the [GitHub 
 
 ## License
 
-This pipeline is released under the [Apache 2.0 License](LICENSE).
+This pipeline is released under the [MIT License](LICENSE).
