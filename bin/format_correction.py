@@ -37,12 +37,18 @@ def reformat_mgf(
         output_file: Path to write reformatted MGF
     """
     with mgf.open("r") as infile, output_file.open("w") as outfile:
-        outfile.writelines(re.sub(r"(\d\.\d+)(e)(\d+)", scientific_to_decimal, line) for line in infile)
+        outfile.writelines(
+            re.sub(r"(\d\.\d+)(e)(\d+)", scientific_to_decimal, line) for line in infile
+        )
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Reformats numbers in scientific notation to decimal")
-    parser.add_argument("--mgf", type=Path, required=True, help="Path to input MGF file")
+    parser = argparse.ArgumentParser(
+        description="Reformats numbers in scientific notation to decimal"
+    )
+    parser.add_argument(
+        "--mgf", type=Path, required=True, help="Path to input MGF file"
+    )
     parser.add_argument(
         "--output",
         type=Path,

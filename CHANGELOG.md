@@ -6,15 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## v1.1.0dev - [2026-02-24]
 
 ### Added
+
 - Test samples for test workflow
 - Format Correction preprocessing to ensure scientific notation can be read by xiSEARCH
 
 ### Fixed
+
 - Wrapped call to mass_recal.py with a call to python to fix failure to call it as an executable
 - Reduced test samples to 1 to reduce runtime for Github actions
 - Updated expected output and XIFDR arguments to reflect faulty argument parsing for file output names
 - Updated output names in docs/output.md to reflect actual pipeline outputs
-
 
 ## v1.0.1dev - [2026-02-10]
 
